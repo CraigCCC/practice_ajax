@@ -1,0 +1,27 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Max: 24
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'spec/*_helper.rb'
+    - 'app/controllers/tasks_controller.rb'
+    - 'bin/*'
+    - 'config/**/*.rb'
+    - 'config/puma.rb'
+    - 'config/routes.rb'
+    - 'config/spring.rb'
+    - 'db/schema.rb'
+    - 'test/application_system_test_case.rb'
+    - 'test/channels/application_cable/connection_test.rb'
+Style/BlockComments:
+  Exclude:
+    - 'spec/*_helper.rb'
+    
