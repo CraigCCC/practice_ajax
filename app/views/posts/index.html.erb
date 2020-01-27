@@ -1,4 +1,12 @@
-<h1>hi</h1>
+<h1>Ajax Practice</h1>
+<%= form_with model: Post.new do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <% if !@posts.nil? %>
   <% @posts.each do |post|%>
@@ -6,10 +14,13 @@
       <div class="card-header">
         <%= post.user.email %>
       </div>
-      <div class="card-body">
-        <p class="card-text">
+      <div class="card-body d-flex">
+        <div class="card-text col-11">
           <%= post.content %>
-        </p>
+        </div>
+        <div class="col-1">
+          <%= current_user_is_post_user_that_can_delete(post) %>
+        </div>
       </div>
     </div>
   <% end %>
