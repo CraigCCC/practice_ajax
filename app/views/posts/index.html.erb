@@ -10,7 +10,7 @@
 
 <% if !@posts.nil? %>
   <% @posts.each do |post|%>
-    <div class="card mb-3">
+    <div id="post-<%= post.id %>" class="card mb-3">
       <div class="card-header">
         <%= post.user.email %>
       </div>
