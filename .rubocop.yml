@@ -25,3 +25,6 @@ Style/BlockComments:
   Exclude:
     - 'spec/*_helper.rb'
     
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
