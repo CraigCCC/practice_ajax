@@ -1,6 +1,6 @@
 class Post < ApplicationRecord # :nodoc:
   # association
-  belongs_to :users
+  belongs_to :user
 
   # validation
   validates :content, presence: true

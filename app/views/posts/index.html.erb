@@ -1,12 +1,14 @@
 <h1>hi</h1>
 
-<% @posts.each do |post| %>
-  <div>
+<% if !@posts.nil? %>
+  <% @posts.each do |post|%>
     <div>
-      <%= post.user.email %>
+      <div>
+        <%= post.user.email %>
+      </div>
+      <div>
+        <%= post.content %>
+      </div>
     </div>
-    <div>
-      <%= post.content %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
