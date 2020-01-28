@@ -1,16 +1,17 @@
-<h1>hi</h1>
+<h1>Ajax Practice</h1>
+<%= form_with model: Post.new do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
 
 <% if !@posts.nil? %>
-  <% @posts.each do |post|%>
-    <div class="card mb-3">
-      <div class="card-header">
-        <%= post.user.email %>
-      </div>
-      <div class="card-body">
-        <p class="card-text">
-          <%= post.content %>
-        </p>
-      </div>
+    <div id="post-list">
+      <% @posts.each do |post|%>
+        <%= render 'posts/post', post: post%>
+      <% end %>
     </div>
-  <% end %>
 <% end %>
