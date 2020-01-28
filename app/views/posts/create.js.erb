@@ -1,0 +1,8 @@
+function ajaxCreate() {
+  let postList = document.getElementById('post-list')
+  let formContent = document.getElementById('post_content')
+
+  postList.insertAdjacentHTML('afterbegin', "<%= j(render 'posts/post', post: @post) %>")
+  formContent.value = ''
+}
+ajaxCreate();

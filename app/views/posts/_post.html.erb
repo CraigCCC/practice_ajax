@@ -1,0 +1,13 @@
+<div id="post-<%= post.id %>" class="card mb-3">
+  <div class="card-header">
+    <%= post.user.email %>
+  </div>
+  <div class="card-body d-flex">
+    <div class="card-text col-11">
+      <%= post.content %>
+    </div>
+    <div class="col-1">
+      <%= current_user_is_post_user_that_can_delete(post) %>
+    </div>
+  </div>
+</div>

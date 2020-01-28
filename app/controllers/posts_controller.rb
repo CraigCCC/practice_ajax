@@ -9,8 +9,9 @@ class PostsController < ApplicationController # :nodoc:
     @post = Post.new(post_params)
     @post.user = current_user
     @post.save
-
-    redirect_to posts_path
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
