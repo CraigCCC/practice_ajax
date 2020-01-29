@@ -3,8 +3,23 @@
     <%= post.user.email %>
   </div>
   <div class="card-body d-flex">
-    <div class="card-text col-11">
+    <div class="card-text col-10">
       <%= post.content %>
+    </div>
+    <div class="col-1">
+      
+      
+      <% if current_user%>
+        <% if post.find_like(current_user) %>
+          <%= link_to  unlike_post_path(post), method: 'post', class: 'btn btn-primary', remote: 'true' do %>
+            <i class="far fa-thumbs-up"></i>
+          <% end %>
+        <% else %>
+          <%= link_to like_post_path(post), method: 'post', class: 'btn btn-primary', remote: 'true' do %>
+            <i class="fas fa-thumbs-up"></i>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
     <div class="col-1">
       <%= current_user_is_post_user_that_can_delete(post) %>
