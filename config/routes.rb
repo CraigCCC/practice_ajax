@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    member do
+      post :like
+      post :unlike
+    end
+  end
 
   root 'posts#index'
 
